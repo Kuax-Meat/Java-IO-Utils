@@ -4,6 +4,10 @@ import java.io.*;
 
 public class FileUtils {
 
+    /*
+     * Classic Java IO
+     */
+
     public static BufferedReader fileReader(String filePath) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
 
@@ -17,9 +21,14 @@ public class FileUtils {
     }
 
     public static BufferedWriter fileWriter(String filePath) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filePath));
+        File file = new File(filePath);
+        file.getParentFile().mkdirs();
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
 
         return bufferedWriter;
     }
 
+    /*
+     * Java NIO
+     */
 }
