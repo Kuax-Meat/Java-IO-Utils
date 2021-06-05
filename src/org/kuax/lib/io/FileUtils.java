@@ -1,23 +1,22 @@
 package org.kuax.lib.io;
 
 import java.io.*;
+import java.nio.file.*;
+import java.util.*;
+import java.util.stream.*;
 
 public class FileUtils {
 
     /*
-     * Classic Java IO
+     * Java IO (Before JDK 6)
      */
 
     public static BufferedReader fileReader(String filePath) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
-
-        return bufferedReader;
+        return new BufferedReader(new FileReader(filePath));
     }
 
     public static String readLineFromFile(BufferedReader bufferedReader) throws IOException {
-        String lineStr = bufferedReader.readLine();
-
-        return lineStr;
+        return bufferedReader.readLine();
     }
 
     public static BufferedWriter fileWriter(String filePath) throws IOException {
@@ -31,4 +30,14 @@ public class FileUtils {
     /*
      * Java NIO
      */
+
+    /* JDK 8 */
+    public static String makeStringFromFile(String filePath) throws IOException {
+        return Files.lines(Paths.get(filePath)).collect(Collectors.joining(System.lineSeparator()));
+    }
+
+    /* JDK 7 */
+    public static List<String> makeListFromFile(String filePath) throws IOException {
+        return Files.readAllLines(Paths.get(filePath));
+    }
 }
