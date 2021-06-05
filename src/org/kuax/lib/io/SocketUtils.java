@@ -1,5 +1,7 @@
 package org.kuax.lib.io;
 
+import jdk.internal.util.xml.impl.Input;
+
 import java.io.*;
 import java.net.*;
 
@@ -8,5 +10,13 @@ public class SocketUtils {
         Socket conn = new Socket(targetIp, targetPort);
 
         return conn;
+    }
+
+    public static BufferedReader getBufferedReaderFromSocket(Socket socket) throws IOException {
+        return new BufferedReader(new InputStreamReader(socket.getInputStream()));
+    }
+
+    public static PrintWriter getPrintWriterFromSocket(Socket socket) throws IOException {
+        return new PrintWriter(socket.getOutputStream(), true);
     }
 }
