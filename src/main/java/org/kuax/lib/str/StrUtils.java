@@ -1,5 +1,10 @@
 package org.kuax.lib.str;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
 import java.util.*;
 
 public class StrUtils {
@@ -60,25 +65,5 @@ public class StrUtils {
         results[1] = stringBuffer.toString();
 
         return results;
-    }
-
-    public static void main(String[] args) {
-        //0001#SYS:086#PROC01:012#PROC02:030#PROC03:024#PROC04:021#PROC05:005
-        String sampleStr = "0001#SYS:086#PROC01:012#PROC02:030#PROC03:024#PROC04:021#PROC05:005";
-        List<String> parsedStr = StrUtils.getSplittedStrFromStr(sampleStr, '#');
-
-        Map<String, String> parsedMap = new HashMap<>();
-        int i = 0;
-        for (String x : parsedStr) {
-            if (i == 0) {
-                parsedMap.put("id",  x);
-            } else {
-                String[] t = StrUtils.getKeyValueFromStr(x, ':');
-                parsedMap.put(t[0], t[1]);
-            }
-            i++;
-        }
-
-        System.out.println("parsedMap : " + parsedMap);
     }
 }
