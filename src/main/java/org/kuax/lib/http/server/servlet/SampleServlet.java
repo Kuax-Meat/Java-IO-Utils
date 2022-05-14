@@ -38,7 +38,7 @@ public class SampleServlet extends HttpServlet {
 
         Person person = new Person();
         person.setName("김춘삼");
-        person.setPhone("010-8582-4252");
+        person.setPhone("888-8888-8888");
 
         SampleVo sampleVo2 = new SampleVo();
         sampleVo2.setCode(999);

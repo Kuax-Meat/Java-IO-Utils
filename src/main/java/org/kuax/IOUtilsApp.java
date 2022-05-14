@@ -51,7 +51,7 @@ public class IOUtilsApp {
                 "  \"msg\": \"You're OK to Joining\",\n" +
                 "  \"person\": {\n" +
                 "    \"name\": \"John Doe\",\n" +
-                "    \"phone\": \"010-4510-7830\"\n" +
+                "    \"phone\": \"999-9999-9999\"\n" +
                 "  }\n" +
                 "}";
 

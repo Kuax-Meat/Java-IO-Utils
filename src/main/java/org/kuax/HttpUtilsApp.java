@@ -17,7 +17,7 @@ public class HttpUtilsApp {
                 "  \"msg\": \"You're OK to Joining\",\n" +
                 "  \"person\": {\n" +
                 "    \"name\": \"John Doe\",\n" +
-                "    \"phone\": \"010-4510-7830\"\n" +
+                "    \"phone\": \"999-9999-9999\"\n" +
                 "  }\n" +
                 "}";
         ContentResponse contentResponse = restClient.callUrl("http://localhost:8080/sampleServlet", HttpMethod.GET, sampleJson);
