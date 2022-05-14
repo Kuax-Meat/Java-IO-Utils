@@ -3,7 +3,7 @@ package org.kuax.sample.vo;
 public class SampleVo {
     private Person person;
     private String msg;
-    private String code;
+    private int code;
 
     public Person getPerson() {
         return person;
@@ -21,11 +21,11 @@ public class SampleVo {
         this.msg = msg;
     }
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 }

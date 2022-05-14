@@ -1,0 +1,8 @@
+{
+  "code": 200,
+  "msg": "You're OK to Joining",
+  "person": {
+    "name": "John Doe",
+    "phone": "010-4510-7830"
+  }
+}
